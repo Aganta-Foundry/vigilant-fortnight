@@ -357,7 +357,20 @@
 
     .hero-img-main {
       width: 100%;
-      aspect-ratio: 3/2;
+      max-width: 400px;
+      aspect-ratio: 4/5;
+      border-radius: 12px;
+      overflow: hidden;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      background: var(--mantle);
+      margin: 0 auto;
+    }
+
+    .hero-img-main img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
     }
 
     .hero-img-inset {
@@ -522,54 +535,41 @@
     }
 
     /* SERVICES */
-    .svc-layout {
-      display: grid;
-      grid-template-columns: 1fr 1.6fr;
-      gap: 64px;
-      align-items: start;
-    }
+    /* svc-layout removed during refactor */
 
-    .svc-img-stack {
-      margin-top: 40px;
-      display: flex;
-      flex-direction: column;
-      gap: 12px;
-    }
-
-    .svc-img-wide {
-      width: 100%;
-      aspect-ratio: 16/9;
-    }
-
-    .svc-img-pair {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 12px;
-    }
-
-    .svc-img-sq {
-      width: 100%;
-      aspect-ratio: 1;
-    }
+    /* svc-img-stack removed during refactor */
 
     .svc-grid {
       display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 12px;
-      margin-top: 40px;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 24px;
+      margin-top: 48px;
     }
 
     .svc-card {
       background: var(--white);
       border: 0.5px solid #D0DCF4;
       border-radius: 14px;
-      padding: 22px;
-      transition: transform 0.2s, box-shadow 0.2s;
+      overflow: hidden;
+      transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.3s ease;
+      display: flex;
+      flex-direction: column;
     }
 
     .svc-card:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 16px 40px rgba(15, 45, 107, 0.1);
+      transform: translateY(-8px);
+      box-shadow: 0 20px 48px rgba(15, 45, 107, 0.12);
+    }
+
+    .svc-card-img {
+      width: 100%;
+      height: 280px;
+      object-fit: cover;
+    }
+
+    .svc-card-body {
+      padding: 24px;
+      flex-grow: 1;
     }
 
     .svc-icon {
@@ -734,14 +734,12 @@
       top: 100px;
     }
 
-    .proc-img-main {
+    .proc-img-actual {
       width: 100%;
-      aspect-ratio: 4/3;
-    }
-
-    .proc-img-foot {
-      width: 100%;
-      aspect-ratio: 16/6;
+      max-width: 400px;
+      height: auto;
+      border-radius: 14px;
+      display: block;
     }
 
     /* CASE STUDIES */
@@ -1425,10 +1423,24 @@
       border-radius: 2px;
     }
 
-    .hsc-bar:nth-child(1) { height: 30%; }
-    .hsc-bar:nth-child(2) { height: 42%; }
-    .hsc-bar:nth-child(3) { height: 55%; background: rgba(26, 86, 219, 0.4); }
-    .hsc-bar:nth-child(4) { height: 70%; background: rgba(26, 86, 219, 0.5); }
+    .hsc-bar:nth-child(1) {
+      height: 30%;
+    }
+
+    .hsc-bar:nth-child(2) {
+      height: 42%;
+    }
+
+    .hsc-bar:nth-child(3) {
+      height: 55%;
+      background: rgba(26, 86, 219, 0.4);
+    }
+
+    .hsc-bar:nth-child(4) {
+      height: 70%;
+      background: rgba(26, 86, 219, 0.5);
+    }
+
     .hsc-bar.active {
       height: 100%;
       background: #1A56DB;
@@ -1466,4 +1478,11 @@
 
     .hsc-val-volt {
       color: #CBFF4D;
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 991px) {
+      .svc-grid {
+        grid-template-columns: 1fr;
+      }
     }
