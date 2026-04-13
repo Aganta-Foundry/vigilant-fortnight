@@ -1344,3 +1344,126 @@
         padding: 40px 24px;
       }
     }
+
+    /* REFACTORED HERO STATS CARD */
+    .hero-stats-card {
+      position: absolute;
+      top: 20px;
+      right: -20px;
+      background: #0A1628;
+      padding: 14px;
+      border-radius: 12px;
+      width: 190px;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      z-index: 5;
+    }
+
+    .hsc-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 12px;
+    }
+
+    .hsc-title {
+      font-size: 9px;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: #8AA3D4;
+    }
+
+    .hsc-tag {
+      font-size: 9px;
+      color: #CBFF4D;
+      background: rgba(203, 255, 77, 0.12);
+      padding: 2px 7px;
+      border-radius: 4px;
+      font-weight: 600;
+    }
+
+    .hsc-main-box {
+      background: rgba(255, 255, 255, 0.04);
+      border: 0.5px solid rgba(255, 255, 255, 0.07);
+      border-radius: 8px;
+      padding: 11px;
+      margin-bottom: 8px;
+    }
+
+    .hsc-label {
+      font-size: 9px;
+      color: #8AA3D4;
+      font-weight: 500;
+      margin-bottom: 5px;
+    }
+
+    .hsc-flex-row {
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+    }
+
+    .hsc-value-lg {
+      font-size: 22px;
+      font-weight: 800;
+      color: #fff;
+      letter-spacing: -0.04em;
+      line-height: 1;
+    }
+
+    .hsc-chart {
+      display: flex;
+      align-items: flex-end;
+      gap: 2px;
+      height: 28px;
+    }
+
+    .hsc-bar {
+      width: 4px;
+      background: rgba(26, 86, 219, 0.3);
+      border-radius: 2px;
+    }
+
+    .hsc-bar:nth-child(1) { height: 30%; }
+    .hsc-bar:nth-child(2) { height: 42%; }
+    .hsc-bar:nth-child(3) { height: 55%; background: rgba(26, 86, 219, 0.4); }
+    .hsc-bar:nth-child(4) { height: 70%; background: rgba(26, 86, 219, 0.5); }
+    .hsc-bar.active {
+      height: 100%;
+      background: #1A56DB;
+    }
+
+    .hsc-trend {
+      font-size: 9px;
+      color: #4d9e4d;
+      margin-top: 4px;
+    }
+
+    .hsc-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 8px;
+    }
+
+    .hsc-grid-item {
+      background: rgba(255, 255, 255, 0.04);
+      border: 0.5px solid rgba(255, 255, 255, 0.07);
+      border-radius: 8px;
+      padding: 10px;
+    }
+
+    .hsc-val-sm {
+      font-size: 16px;
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      line-height: 1;
+    }
+
+    .hsc-val-white {
+      color: #fff;
+    }
+
+    .hsc-val-volt {
+      color: #CBFF4D;
+    }
