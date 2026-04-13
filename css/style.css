@@ -1575,8 +1575,8 @@
     }
 
     .text-glow {
-      color: #FFB347;
-      text-shadow: 0 0 20px rgba(255, 179, 71, 0.3);
+      color: var(--volt);
+      text-shadow: 0 0 20px rgba(203, 255, 77, 0.3);
     }
 
     @media (max-width: 768px) {
