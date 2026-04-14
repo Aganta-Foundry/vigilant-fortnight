@@ -642,26 +642,217 @@
       align-items: center;
     }
 
-    .about-img-grid {
+    .about-dashboard {
+      background:
+        radial-gradient(circle at top left, rgba(203, 255, 77, 0.14), transparent 34%),
+        linear-gradient(180deg, rgba(12, 28, 64, 0.96), rgba(8, 22, 48, 0.98));
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 24px;
+      padding: 24px;
+      box-shadow: 0 24px 60px rgba(6, 18, 42, 0.28);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .about-dashboard::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: repeating-linear-gradient(45deg,
+          transparent,
+          transparent 16px,
+          rgba(255, 255, 255, 0.025) 16px,
+          rgba(255, 255, 255, 0.025) 17px);
+      pointer-events: none;
+    }
+
+    .dash-hero,
+    .dash-panel {
+      position: relative;
+      z-index: 1;
+    }
+
+    .dash-hero {
+      background: linear-gradient(180deg, rgba(36, 84, 190, 0.92), rgba(21, 58, 148, 0.92));
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 18px;
+      padding: 18px;
       display: grid;
-      grid-template-columns: 1fr 1fr;
+      gap: 18px;
+      overflow: hidden;
+    }
+
+    .dash-top {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
       gap: 12px;
     }
 
-    .about-img-tall {
-      grid-row: span 2;
-      aspect-ratio: 2/3;
-      width: 100%;
+    .dash-kicker {
+      font-size: 10px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: rgba(232, 240, 254, 0.82);
     }
 
-    .about-img-sm {
-      aspect-ratio: 1;
-      width: 100%;
+    .dash-title {
+      font-size: 22px;
+      font-weight: 800;
+      color: var(--white);
+      letter-spacing: -0.03em;
+      margin-top: 6px;
     }
 
-    .about-img-wide {
-      aspect-ratio: 4/3;
+    .dash-badge {
+      font-size: 11px;
+      font-weight: 700;
+      color: #0A1628;
+      background: var(--volt);
+      border-radius: 999px;
+      padding: 8px 10px;
+      line-height: 1;
+      white-space: nowrap;
+    }
+
+    .dash-main-metric {
+      display: grid;
+      gap: 8px;
+      max-width: 72%;
+    }
+
+    .dash-main-label,
+    .dash-card-label {
+      font-size: 11px;
+      color: rgba(232, 240, 254, 0.72);
+    }
+
+    .dash-main-value {
+      font-size: clamp(32px, 4vw, 46px);
+      font-weight: 800;
+      line-height: 0.95;
+      letter-spacing: -0.05em;
+      color: var(--white);
+    }
+
+    .dash-main-note,
+    .dash-card-note {
+      font-size: 12px;
+      line-height: 1.55;
+      color: rgba(232, 240, 254, 0.7);
+    }
+
+    .dash-bars {
+      position: absolute;
+      right: 18px;
+      bottom: 18px;
+      width: 104px;
+      height: 84px;
+      display: flex;
+      align-items: end;
+      gap: 6px;
+    }
+
+    .dash-bars span {
+      flex: 1;
+      border-radius: 999px 999px 4px 4px;
+      background: linear-gradient(180deg, rgba(203, 255, 77, 0.42), rgba(203, 255, 77, 1));
+      box-shadow: 0 10px 20px rgba(203, 255, 77, 0.18);
+    }
+
+    .dash-grid {
+      position: relative;
+      z-index: 1;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      margin-top: 12px;
+    }
+
+    .dash-panel {
+      background: rgba(255, 255, 255, 0.06);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 18px;
+      padding: 18px;
+      min-height: 126px;
+    }
+
+    .dash-panel-wide {
+      grid-column: 1 / -1;
+      min-height: auto;
+    }
+
+    .dash-card-value {
+      font-size: 32px;
+      font-weight: 800;
+      color: var(--volt);
+      letter-spacing: -0.04em;
+      line-height: 1;
+      margin-top: 8px;
+      margin-bottom: 8px;
+    }
+
+    .dash-chip-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin: 12px 0 10px;
+    }
+
+    .dash-chip {
+      font-size: 11px;
+      font-weight: 700;
+      color: var(--ice);
+      background: rgba(26, 86, 219, 0.32);
+      border: 1px solid rgba(138, 163, 212, 0.18);
+      border-radius: 999px;
+      padding: 8px 10px;
+      white-space: nowrap;
+    }
+
+    .dash-progress-list {
+      display: grid;
+      gap: 12px;
+      margin-top: 12px;
+    }
+
+    .dash-progress-meta {
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      font-size: 11px;
+      color: var(--ice);
+      margin-bottom: 6px;
+    }
+
+    .dash-progress-track {
       width: 100%;
+      height: 10px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.08);
+      overflow: hidden;
+    }
+
+    .dash-progress-track span {
+      display: block;
+      height: 100%;
+      border-radius: inherit;
+      background: linear-gradient(90deg, #7FB2FF 0%, #CBFF4D 100%);
+    }
+
+    @media (max-width: 900px) {
+      .about-layout {
+        gap: 32px;
+      }
+
+      .dash-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .dash-main-metric {
+        max-width: 100%;
+        padding-right: 120px;
+      }
     }
 
     .num-grid {
@@ -802,6 +993,15 @@
       aspect-ratio: 16/9;
     }
 
+    .case-photo {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      position: relative;
+      z-index: 1;
+    }
+
     .case-body {
       padding: 22px;
     }
@@ -869,8 +1069,9 @@
 
     .testi-layout {
       display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 56px;
+      grid-template-columns: minmax(0, 760px) minmax(280px, 360px);
+      justify-content: space-between;
+      gap: 32px;
       align-items: start;
       margin-top: 56px;
     }
@@ -881,11 +1082,12 @@
       gap: 12px;
       position: sticky;
       top: 100px;
+      max-width: 760px;
     }
 
     .testi-img-main {
       width: 100%;
-      aspect-ratio: 4/3;
+      aspect-ratio: 16/10;
     }
 
     .testi-img-pair {
@@ -899,10 +1101,20 @@
       aspect-ratio: 1;
     }
 
+    .testi-photo {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      position: relative;
+      z-index: 1;
+    }
+
     .testi-cards {
       display: flex;
       flex-direction: column;
       gap: 12px;
+      max-width: 360px;
     }
 
     .testi-card {
@@ -1323,8 +1535,7 @@
 
       .svc-img-stack,
       .proc-imgs,
-      .testi-imgs,
-      .about-img-grid {
+      .testi-imgs {
         display: none;
       }
 
